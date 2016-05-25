@@ -29,6 +29,10 @@ func (g *MSTraceGroup) PrintTraceList(timeformat int, details int, gaps int) {
 	C.mst_printtracelist((*_Ctype_struct_MSTraceGroup_s)(g), C.flag(timeformat), C.flag(details), C.flag(gaps))
 }
 
+func (g *MSTraceGroup) Heal() {
+	C.mst_groupheal((*_Ctype_struct_MSTraceGroup_s)(g), -1.0, -1.0)
+}
+
 func (g *MSTraceGroup) First() *MSTrace {
 	return (*MSTrace)(C.mst_groupfirst((*_Ctype_struct_MSTraceGroup_s)(g)))
 }

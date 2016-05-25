@@ -73,7 +73,7 @@ func (t *MSTrace) DataSamples() ([]int32, error) {
 	if t.sampletype == 'a' {
 		return nil, errors.New("not a numerical formatted record")
 	}
-	samples := make([]int32, t.numsamples)
+	samples := make([]int32, t.numsamples, t.numsamples)
 
 	switch {
 	case t.sampletype == 'i':
